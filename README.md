@@ -6,3 +6,14 @@ In addition to browsing your favorite characters and comics from the Marvel Univ
 
 //Link to deployed Project:
 
+This is the wireframe for my homepage which routes to..
+![Home Page](https://i.imgur.com/sUbdoQp.png)
+The Glossary..
+![The Glossary](https://i.imgur.com/MqQT3R3.png)
+And The hero creation screen!
+![The Hero Creation Screen](https://i.imgur.com/DJ0H9R2.png)
+Here is a brief overview of my componeent heirarchy:
+![Scrappy Planning](https://i.imgur.com/J2u6w8T.jpg)
+
+//Code Snippet:
+//User Stories:
