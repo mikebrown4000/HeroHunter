@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Route, Link } from 'react-router-dom';
 import './App.css';
-
+import HeroSearch from './components/HeroSearch';
 import getHeroes from './services/getHeroes.js';
 
 import axios from 'axios';
@@ -39,7 +40,10 @@ handleChange(e){
 
 handleSubmit(ev){
   ev.preventDefault();
-  const nameNameName = 'I want to get hit by a car';
+  this.setState({
+    heroName: this.state.heroName,
+
+  })
 }
 
 
@@ -47,19 +51,21 @@ handleSubmit(ev){
   render() {
     return (
       <div className="App">
+        <div>
+        //Header Component
         <h1>  Hero Hunter </h1>
-        <input
-          type="text"
-          id="heroName"
-          name="heroName"
-          onChange={this.handleChange}
+
+
+        <HeroSearch
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        heroName={this.state.heroName}
         />
-        <button
-          onSubmit={this.handleSubmit}
-        >Submit- I guess? WGAF</button>
-        <br></br>
         //[route to hero glossary]
         //[route to crerate a hero (new Hero form)]
+        </div>
+
+        //Footer Component
       </div>
     );
   }
