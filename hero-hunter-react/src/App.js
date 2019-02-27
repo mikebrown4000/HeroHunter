@@ -3,6 +3,9 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import HeroSearch from './components/HeroSearch';
 import getHeroes from './services/getHeroes.js';
+import Header from './components/Header'
+import Footer from './components/Footer'
+import RenderHeroes from './components/RenderHeroes'
 
 import axios from 'axios';
 
@@ -14,7 +17,6 @@ class App extends Component {
     this.state = {
       hero: [],
       heroName: '',
-      realName: '',
       firstAppear:'',
       description:'',
       image:''
@@ -24,13 +26,6 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-async componentDidMount(){
-  const heroData = await getHeroes();
-  this.setState({
-    hero: heroData
-  })
-}
-
 handleChange(e){
   const {name, value} = e.target;
   this.setState({
@@ -38,12 +33,14 @@ handleChange(e){
   })
 }
 
-handleSubmit(ev){
+async handleSubmit(ev){
   ev.preventDefault();
+  const heroData = await getHeroes()
+  console.log(heroData);
   this.setState({
-    heroName: this.state.heroName,
-
+    hero: heroData
   })
+  console.log(this.state);
 }
 
 
@@ -51,21 +48,25 @@ handleSubmit(ev){
   render() {
     return (
       <div className="App">
-        <div>
-        //Header Component
-        <h1>  Hero Hunter </h1>
+        <Header />
+
+          <div>
+          //Header Component
+          <h1>  Hero Hunter </h1>
 
 
-        <HeroSearch
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-        heroName={this.state.heroName}
-        />
-        //[route to hero glossary]
-        //[route to crerate a hero (new Hero form)]
-        </div>
+          <HeroSearch
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          />
+          <RenderHeroes
+          hero={this.state.hero}
+          />
+          //[route to hero glossary]
+          //[route to crerate a hero (new Hero form)]
+          </div>
 
-        //Footer Component
+        <Footer />
       </div>
     );
   }

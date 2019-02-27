@@ -30,7 +30,7 @@ const NewHeroForm = (props) => {
         id="desciption"
         name="desciption"
         value={props.description}
-        onChange={props. description} />
+        onChange={props.handleChange} />
       <input
       value="Submit"
       onClick={props.handleSubmit}
