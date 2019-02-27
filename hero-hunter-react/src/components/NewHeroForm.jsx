@@ -2,7 +2,7 @@ import React from 'react';
 
 const NewHeroForm = (props) => {
   return(
-    <form>
+    <form className="createForm">
       <label htmlFor="hero alias">Hero Alias:</label>
       <input
         type="text"
@@ -10,20 +10,15 @@ const NewHeroForm = (props) => {
         id="hero_alias"
         value={props.name}
         onChange={props.handleChange} />
-      <label htmlFor="real name">Real Name:</label>
-      <input
-        type="text"
-        name="real_name"
-        id="real_name"
-        value={props.train_type}
-        onChange={props.handleChange} />
+        <br></br>
       <label htmlFor="first appeared">First Appeared:</label>
       <input
         type="text"
         id="first_appeared"
         name="first_appeared"
-        value={props.km_traveled}
+        value={props.firstAppear}
         onChange={props.handleChange} />
+        <br></br>
       <label htmlFor="description">Desciption:</label>
       <input
         type="text"
@@ -31,6 +26,7 @@ const NewHeroForm = (props) => {
         name="desciption"
         value={props.description}
         onChange={props.handleChange} />
+        <br></br>
       <input
       value="Submit"
       onClick={props.handleSubmit}

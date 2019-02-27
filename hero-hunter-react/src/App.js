@@ -3,9 +3,11 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import HeroSearch from './components/HeroSearch';
 import getHeroes from './services/getHeroes.js';
+import NewHeroForm from './components/NewHeroForm';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import RenderHeroes from './components/RenderHeroes'
+import Homepage from './components/Homepage'
 
 import axios from 'axios';
 
@@ -15,7 +17,7 @@ class App extends Component {
     super();
 
     this.state = {
-      hero: [],
+      hero: null,
       heroName: '',
       firstAppear:'',
       description:'',
@@ -47,27 +49,36 @@ async handleSubmit(ev){
 
   render() {
     return (
+      <>
       <div className="App">
         <Header />
-
           <div>
-          //Header Component
-          <h1>  Hero Hunter </h1>
+          <nav>
+            <Link to="/">Home</Link>
+            <Link to="/glossary">Hero Hunt</Link>
+            <Link to="/home">Create A Hero</Link>
+          </nav>
+              <h1>  Hero Hunter </h1>
 
-
-          <HeroSearch
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          />
-          <RenderHeroes
-          hero={this.state.hero}
-          />
-          //[route to hero glossary]
-          //[route to crerate a hero (new Hero form)]
+              <Route exact path="/" render={Homepage}/>
+              <Route path="/glossary" render={()=>
+              <>
+              <HeroSearch
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              />
+              <RenderHeroes
+              hero={this.state.hero}
+              />
+              </>
+              }/>
+              <Route exact path="/home" render={NewHeroForm}/>
           </div>
 
-        <Footer />
+
       </div>
+      <Footer />
+      </>
     );
   }
 }
