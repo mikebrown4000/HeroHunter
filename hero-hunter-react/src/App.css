@@ -1,27 +1,101 @@
+body {
+  background: black;
+}
 
+header{
+  height: 64px;
+  display: flex;
+  justify-content: center;
+}
 
-footer{
+.homepageDiv{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.creator{
+  margin: 10px;
+}
+
+.creator-submit{
+  margin: 10px;
+  padding: 4px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   font-family: fresno, sans-serif;
   font-style: normal;
   font-weight: 400;
-  text-align: center;
+  font-size: 36px;
+}
+
+#heroText{
+  width: 30%;
+  margin: 50px;
+  font-size: 18px;
+}
+
+.heroContainer{
+  display: flex;
+  justify-content: center;
 }
 
 .heroCard{
- width: 50%;
- height: 40%;
- display:flex;
- background-color: rgba(0, 0, 0, 0.2);
- padding: 10px
+ width: 60%;
+ height: 60%;
+ background-color: rgba(0, 0, 0, 0.18);
+ padding: 10px;
+ margin: 10px;
+ border-radius: 10px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .createForm{
+}
+
+.bigText{
+  font-size: 180px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+h1{
+  font-size: 160px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 
 }
 
+h2{
+  font-size: 124px;
+  margin: 0;
+}
+
+
+.bigText:hover{
+    animation-name: sendHeroes;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover{
+  color: #000000;
+}
+
 input[type=text] {
-  width: 288px;
-  height:36px;
+  width: 360px;
+  height:48px;
   background-color: white;
   color: black;
   font-family: fresno, sans-serif;
@@ -31,7 +105,6 @@ input[type=text] {
 }
 
 button{
-
   margin: 10px;
   padding: 4px;
   background-color: black;
@@ -46,9 +119,10 @@ button{
 }
 
 nav{
-  display:flex;
-  justify-content: space-around;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
   font-size: 72px;
+  margin-bottom: 72px;
 }
 
 .App {
@@ -57,7 +131,41 @@ nav{
   font-style: normal;
   font-weight: 400;
   color: 'white';
-  height: auto;
-  width: auto;
-  background: red;
+  height: 100vh;
+  width: 100vw;
+  background-image: radial-gradient(circle, #E61318, #8F070F);
+
+}
+
+footer{
+  position: absolute;
+  bottom:0;
+  padding-top: 4px;
+  background-color: black;
+  position: sticky;
+  height:40px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 32px;
+  font-family: fresno, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.footer-links:hover{
+  color: #E61318;
+}
+
+#triangle-bottomleft {
+  width: 100%;
+  height: 20%;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 20px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes sendHeroes {
+
 }

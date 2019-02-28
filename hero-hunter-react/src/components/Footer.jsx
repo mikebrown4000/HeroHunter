@@ -3,7 +3,9 @@ import React from 'react'
 export default () => {
   return(
     <footer>
-    This is my footer component; I am shadow, I am stone. I am eeverything the world knows yet unsees!
+      <a class="footer-links" href="https://www.marvel.com/">Marvel</a>
+      <a class="footer-links" href="https://marvel.fandom.com/wiki/Marvel_Database">Wiki</a>
+      <a class="footer-links" href="https://github.com/mikebrown4000/HeroHunter">GitHub</a>
     </footer>
   )
 }

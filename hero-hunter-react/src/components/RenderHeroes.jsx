@@ -5,10 +5,12 @@ export default (props) => {
   return(
     <div>
       {props.hero &&
-      <div className='heroCard'>
-        <h1>{props.hero.name}</h1>
-        <h4>{props.hero.description}</h4>
-        <img src={props.hero.thumbnail.path+'/portrait_fantastic.jpg'} />
+      <div className="heroContainer">
+        <div className='heroCard'>
+          <h2>{props.hero.name}</h2>
+          <p id="heroText">{props.hero.description}</p>
+          <img src={props.hero.thumbnail.path+'/portrait_fantastic.jpg'} />
+        </div>
       </div>
       }
     </div>

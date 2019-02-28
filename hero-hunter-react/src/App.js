@@ -54,11 +54,10 @@ async handleSubmit(ev){
         <Header />
           <div>
           <nav>
-            <Link to="/">Home</Link>
             <Link to="/glossary">Hero Hunt</Link>
-            <Link to="/home">Create A Hero</Link>
+            <Link to="/">Home</Link>
+            <Link to="/create">Create A Hero</Link>
           </nav>
-              <h1>  Hero Hunter </h1>
 
               <Route exact path="/" render={Homepage}/>
               <Route path="/glossary" render={()=>
@@ -72,7 +71,7 @@ async handleSubmit(ev){
               />
               </>
               }/>
-              <Route exact path="/home" render={NewHeroForm}/>
+              <Route exact path="/create" render={NewHeroForm}/>
           </div>
 
 
