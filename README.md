@@ -16,4 +16,57 @@ Here is a brief overview of my componeent heirarchy:
 ![Scrappy Planning](https://i.imgur.com/J2u6w8T.jpg)
 
 //Code Snippet:
+
+  render() {
+    return (
+      <>
+      <div className="App">
+        <Header />
+          <div>
+          <nav>
+            <Link to="/glossary">Hero Hunt</Link>
+            <Link to="/">Home</Link>
+            <Link to="/create">Create A Hero</Link>
+          </nav>
+
+              <Route exact path="/" render={Homepage}/>
+
+              <Route path="/glossary" render={()=>
+              <>
+              <HeroSearch
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              />
+              <RenderHeroes
+              hero={this.state.hero}
+              />
+              </>
+              }/>
+
+              <Route path="/create" render={()=>
+              <>
+              <NewHeroForm
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+              />
+              <RenderCustom
+              name={this.state.heroName}
+              description={this.state.description}
+              image={this.state.image}
+              />
+              </>
+              }/>
+
+          </div>
+
+
+      </div>
+      <Footer />
+      </>
+    );
+  }
+}
+
+
 //User Stories:
+Don't be limited by your imagination. Don't just be a part of the marvel universe. Live it.
